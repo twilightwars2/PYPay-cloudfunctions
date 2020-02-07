@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/pypay-cloudserver.appspot.com/o/favicon.ico?alt=media&token=9b187be4-a6c1-4445-b308-4595c401dc30">
+
+    <title>PYPAY- a payment system for PYsales robot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+    <!-- Custom fonts for this template -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/style.css"
+        crossorigin="anonymous">
+
+
+    <style>
+        .main {
+            display: grid;
+            width: 50rem;
+            margin: auto;
+            grid-template-rows: 5rem auto;
+
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark signbu">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#logNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="logNav">
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline">
+
+                    <li class="nav-item px-lg-3">
+                        <button class=" btn btn-out btn-outline-light member" id="logoutbtn"
+                            type="button">Logout</button>
+                    </li>
+
+                </form>
+            </ul>
+        </div>
+
+    </nav>
+
+
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1 class="site-heading text-center text-white d-lg-block">
+                        <span class="site-heading-upper text-primary mb-3 first-words">A payment system for PYsales
+                            robot</span>
+                        <br>
+                        <span class="site-heading-lower text-head mb-5">PYPAY</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-success py-lg-4 second-words" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Functions</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment">Introduction
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYPAY">PYPAY system</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYsales">PYsales robot</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/demo">Demo video</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/download">Downloads</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section clearfix">
+
+        <div class="w40cenblank cta-inner"></div>
+
+
+        <div class="w100div">
+            <div role="main" id="main" class="main">
+                <h2 class="form-textdata">
+                    <span class="font"><strong><%= fname %>'s personal data</strong></span>
+
+                </h2>
+                <br />
+                <br />
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Data Point</th>
+                            <th>Value</th>
+                            <th class="thcen">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-light">
+                        <tr class="table-primary">
+                            <td>Username</td>
+                            <td colspan="2"><%= user %></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>***</td>
+                            <td class="thcen" id="mpass"><i class="fas fa-edit fa-lg" style="cursor:pointer"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Recovery Email</td>
+                            <td><%= email %></td>
+                            <td class="thcen" id="memail"><i class="fas fa-edit fa-lg" style="cursor:pointer"></i></td>
+                        </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td><%= fname %></td>
+                            <td class="thcen" id="mFname"><i class="fas fa-edit fa-lg" style="cursor:pointer"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td><%= lname %></td>
+                            <td class="thcen" id="mLname"><i class="fas fa-edit fa-lg" style="cursor:pointer"></i></td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td>Balance</td>
+                            <td colspan="2"><%= balance %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="page-section clearfix">
+
+        <div style="text-align:center">
+            <button type="button" id="deleteac" class="btn btn-primary">Delete account</button>
+        </div>
+
+
+
+
+    </section>
+
+
+    <div class="Modal-backdrop1"></div>
+    <div id="modpass" class="Modal" tabindex="-1" role="dialog">
+        <form class="login-modal">
+            <div class="form-row modal-header">
+                <h5 class="modal-title">Modify password</h5>
+            </div>
+            <div class="form-row icon-input-wrapper">
+                <i class="fas fa-pencil-alt fa-lg icon-input-icon"></i>
+                <input type="password" class="form-control icon-input-field" id="currentpass"
+                    placeholder="current password">
+            </div>
+            <div class="form-row icon-input-wrapper">
+                <i class="fas fa-pencil-alt fa-lg icon-input-icon"></i>
+                <input type="password" class="form-control icon-input-field" id="newpass" placeholder="new password">
+            </div>
+            <div class="form-row modal-button">
+                <button id="modalsubmitButton1" class="modal-btn btn btn-primary">Submit</button>
+                <button id="modalCancelButton1" class="modal-btn btn btn-danger">Cancel</button>
+            </div>
+            <div class="form-row modal-message">
+                <h5><span id="modal-msg"></span></h5>
+            </div>
+        </form>
+    </div>
+
+    <div class="Modal-backdrop2"></div>
+    <div id="modemail" class="Modal" tabindex="-1" role="dialog">
+        <form class="login-modal">
+            <div class="form-row modal-header">
+                <h5 class="modal-title">Modify recovery email</h5>
+            </div>
+            <div class="form-row icon-input-wrapper">
+                <i class="fas fa-pencil-alt fa-lg icon-input-icon"></i>
+                <input type="text" class="form-control icon-input-field" id="newemail" placeholder="new email address">
+            </div>
+            <div class="form-row modal-button">
+                <button id="modalsubmitButton2" class="modal-btn btn btn-primary">Submit</button>
+                <button id="modalCancelButton2" class="modal-btn btn btn-danger">Cancel</button>
+            </div>
+            <div class="form-row modal-message">
+                <h5><span id="modal-msg"></span></h5>
+            </div>
+        </form>
+    </div>
+
+    <div class="Modal-backdrop3"></div>
+    <div id="modFn" class="Modal" tabindex="-1" role="dialog">
+        <form class="login-modal">
+            <div class="form-row modal-header">
+                <h5 class="modal-title">Modify first name</h5>
+            </div>
+            <div class="form-row icon-input-wrapper">
+                <i class="fas fa-pencil-alt fa-lg icon-input-icon"></i>
+                <input type="text" class="form-control icon-input-field" id="newFn" placeholder="new first name">
+            </div>
+            <div class="form-row modal-button">
+                <button id="modalsubmitButton3" class="modal-btn btn btn-primary">Submit</button>
+                <button id="modalCancelButton3" class="modal-btn btn btn-danger">Cancel</button>
+            </div>
+            <div class="form-row modal-message">
+                <h5><span id="modal-msg"></span></h5>
+            </div>
+        </form>
+    </div>
+
+    <div class="Modal-backdrop4"></div>
+    <div id="modLn" class="Modal" tabindex="-1" role="dialog">
+        <form class="login-modal">
+            <div class="form-row modal-header">
+                <h5 class="modal-title">Modify last name</h5>
+            </div>
+            <div class="form-row icon-input-wrapper">
+                <i class="fas fa-pencil-alt fa-lg icon-input-icon"></i>
+                <input type="text" class="form-control icon-input-field" id="newLn" placeholder="new last name">
+            </div>
+            <div class="form-row modal-button">
+                <button id="modalsubmitButton4" class="modal-btn btn btn-primary">Submit</button>
+                <button id="modalCancelButton4" class="modal-btn btn btn-danger">Cancel</button>
+            </div>
+            <div class="form-row modal-message">
+                <h5><span id="modal-msg"></span></h5>
+            </div>
+        </form>
+    </div>
+
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; PYPAY/PYsales 2019</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"
+        integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(() => {
+            const logoutbtn = $("#logoutbtn");
+            const mpass = $("#mpass");
+            const memail = $("#memail");
+            const mFname = $("#mFname");
+            const mLname = $("#mLname");
+            const modalMsg = $("#modal-msg");
+
+            const modalsubmitButton1 = $("#modalsubmitButton1");
+            const modalCancelButton1 = $("#modalCancelButton1");
+            const modpass = $("#modpass");
+            const backdrop1 = $(".Modal-backdrop1");
+            const currentpass = $("#currentpass");
+            const newpass = $("#newpass")
+
+            const modalsubmitButton2 = $("#modalsubmitButton2");
+            const modalCancelButton2 = $("#modalCancelButton2");
+            const modemail = $("#modemail");
+            const backdrop2 = $(".Modal-backdrop2");
+            const newemail = $("#newemail")
+
+            const modalsubmitButton3 = $("#modalsubmitButton3");
+            const modalCancelButton3 = $("#modalCancelButton3");
+            const modFn = $("#modFn");
+            const backdrop3 = $(".Modal-backdrop3");
+            const newFn = $("#newFn")
+
+            const modalsubmitButton4 = $("#modalsubmitButton4");
+            const modalCancelButton4 = $("#modalCancelButton4");
+            const modLn = $("#modLn");
+            const backdrop4 = $(".Modal-backdrop4");
+            const newLn = $("#newLn");
+
+            const deleteac = $("#deleteac");
+
+
+
+
+
+
+            mpass.on("click", event => {
+                event.preventDefault();
+                modpass.show();
+                backdrop1.show();
+            });
+
+            modalCancelButton1.on("click", event => {
+                event.preventDefault();
+                modpass.hide();
+                backdrop1.hide();
+            });
+
+            modalsubmitButton1.on("click", event => {
+                event.preventDefault();
+
+                if (currentpass.val() && newpass.val()) {
+                    modalsubmitButton1.prop("disabled", "true");
+                    modalCancelButton1.prop("disabled", "true");
+                    currentpass.prop("disabled", "true");
+                    newpass.prop("disabled", "true");
+                    userID = Cookies.get("x-member-id");
+                    fetch("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/conpass", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        mode: "cors",
+                        body: JSON.stringify({
+                            user: userID,
+                            pass: currentpass.val(),
+                            newpass: newpass.val()
+                        })
+                    }).then(res => res.json()).then(data => {
+                        modalsubmitButton1.removeAttr("disabled");
+                        modalCancelButton1.removeAttr("disabled");
+                        currentpass.removeAttr("disabled");
+                        newpass.removeAttr("disabled");
+                        currentpass.val("");
+                        newpass.val("");
+
+                        if (data.error) {
+                            modalMsg.text(data.error)
+                        } else {
+                            modpass.hide();
+                            backdrop1.hide();
+                            window.alert("Modify password successfully!");
+                            window.location.reload("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/account")
+                        }
+                    }).catch(err => modalMsg.text(err));
+                } else {
+                    window.alert("Please fill in the current and the new password!");
+                }
+            });
+
+
+
+            memail.on("click", event => {
+                event.preventDefault();
+                modemail.show();
+                backdrop2.show();
+            });
+
+            modalCancelButton2.on("click", event => {
+                event.preventDefault();
+                modemail.hide();
+                backdrop2.hide();
+            });
+            modalsubmitButton2.on("click", event => {
+                event.preventDefault();
+
+
+                if (newemail.val()) {
+
+                    var emailRegxp = /^([\w]+)(.[\w]+)*@([\w]+)(.[\w]{2,3}){1,2}$/;
+
+
+
+                    if (emailRegxp.test(newemail.val()) != true) {
+                        alert("Please fill in the correct email!");
+                        return;
+                    }
+                    modalsubmitButton2.prop("disabled", "true");
+                    modalCancelButton2.prop("disabled", "true");
+                    newemail.prop("disabled", "true");
+                    userID = Cookies.get("x-member-id");
+                    fetch("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/newemail", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        mode: "cors",
+                        body: JSON.stringify({
+                            user: userID,
+                            newemail: newemail.val()
+                        })
+                    }).then(res => res.json()).then(data => {
+                        modalsubmitButton2.removeAttr("disabled");
+                        modalCancelButton2.removeAttr("disabled");
+                        newemail.removeAttr("disabled");
+                        newemail.val("");
+
+                        if (data.error) {
+                            modalMsg.text(data.error)
+                        } else {
+                            modemail.hide();
+                            backdrop2.hide();
+                            window.alert("Modify email successfully!");
+                            window.location.reload("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/account")
+                        }
+                    }).catch(err => modalMsg.text(err));
+                } else {
+                    window.alert("Please fill in the email address!");
+                }
+            }
+
+            );
+
+
+
+
+            mFname.on("click", event => {
+                event.preventDefault();
+                modFn.show();
+                backdrop3.show();
+            });
+
+            modalCancelButton3.on("click", event => {
+                event.preventDefault();
+                modFn.hide();
+                backdrop3.hide();
+            });
+            modalsubmitButton3.on("click", event => {
+                event.preventDefault();
+
+                if (newFn.val()) {
+                    modalsubmitButton3.prop("disabled", "true");
+                    modalCancelButton3.prop("disabled", "true");
+                    newFn.prop("disabled", "true");
+                    userID = Cookies.get("x-member-id");
+                    fetch("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/newFn", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        mode: "cors",
+                        body: JSON.stringify({
+                            user: userID,
+                            newFn: newFn.val()
+                        })
+                    }).then(res => res.json()).then(data => {
+                        modalsubmitButton3.removeAttr("disabled");
+                        modalCancelButton3.removeAttr("disabled");
+                        newFn.removeAttr("disabled");
+                        newFn.val("");
+
+                        if (data.error) {
+                            modalMsg.text(data.error)
+                        } else {
+                            modFn.hide();
+                            backdrop3.hide();
+                            window.alert("Modify first name successfully!");
+                            window.location.reload("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/account")
+                        }
+                    }).catch(err => modalMsg.text(err));
+                } else {
+                    window.alert("Please fill in first name!");
+                }
+            });
+
+
+
+
+
+
+            mLname.on("click", event => {
+                event.preventDefault();
+                modLn.show();
+                backdrop4.show();
+            });
+
+            modalCancelButton4.on("click", event => {
+                event.preventDefault();
+                modLn.hide();
+                backdrop4.hide();
+            });
+
+            modalsubmitButton4.on("click", event => {
+                event.preventDefault();
+
+                if (newLn.val()) {
+                    modalsubmitButton4.prop("disabled", "true");
+                    modalCancelButton4.prop("disabled", "true");
+                    newLn.prop("disabled", "true");
+                    userID = Cookies.get("x-member-id");
+                    fetch("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/newLn", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        mode: "cors",
+                        body: JSON.stringify({
+                            user: userID,
+                            newLn: newLn.val()
+                        })
+                    }).then(res => res.json()).then(data => {
+                        modalsubmitButton4.removeAttr("disabled");
+                        modalCancelButton4.removeAttr("disabled");
+                        newLn.removeAttr("disabled");
+                        newLn.val("");
+
+                        if (data.error) {
+                            modalMsg.text(data.error)
+                        } else {
+                            modLn.hide();
+                            backdrop4.hide();
+                            window.alert("Modify last name successfully!");
+                            window.location.reload("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/account")
+                        }
+                    }).catch(err => modalMsg.text(err));
+                } else {
+                    window.alert("Please fill in last name!");
+                }
+            });
+
+
+
+            deleteac.on("click", event => {
+                event.preventDefault();
+                var sure = window.confirm("Are you sure to delete the account permanently?");
+                if (sure == true) {
+                    userID = Cookies.get("x-member-id");
+                    fetch("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/del", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        mode: "cors",
+                        body: JSON.stringify({
+                            user: userID,
+                        })
+                    }).then(res => res.json()).then(json => {
+
+                        window.alert(`Delete ${userID} successfully!`);
+                        window.location.reload("https://us-central1-pypay-cloudserver.cloudfunctions.net/payment")
+                    }
+                    ).catch(err => alert(`Delete error: ${err}`)
+
+
+                    );
+
+
+                }
+
+            });
+
+            logoutbtn.on("click", event => {
+                event.preventDefault();
+                window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/logout";
+            });
+
+
+
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

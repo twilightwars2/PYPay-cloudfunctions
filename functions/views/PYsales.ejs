@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/pypay-cloudserver.appspot.com/o/favicon.ico?alt=media&token=9b187be4-a6c1-4445-b308-4595c401dc30">
+
+    <title>PYPAY- a payment system for PYsales robot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+    <!-- Custom fonts for this template -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/style.css"
+        crossorigin="anonymous">
+    <style>
+        .member {
+            display: <%=member %>;
+        }
+
+        .anonymous {
+            display: <%=anonymous %>;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark signbu">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#logNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="logNav">
+            <h2 class=" text-primary "><span id="loginName"></span></h2>
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline">
+                    <li class="nav-item px-lg-3">
+                        <button class=" btn btn-sign btn-outline-light anonymous" id="loginbtn" type="button">Login
+                        </button>
+                    </li>
+                    <li class="nav-item px-lg-3">
+                        <button class=" btn btn-sign btn-outline-light anonymous" id="signupbtn"
+                            type="button">Signup</button>
+                    </li>
+                    <li class="nav-item px-lg-3">
+                        <button class=" btn btn-out btn-outline-light member" id="logoutbtn"
+                            type="button">Logout</button>
+                    </li>
+                    <li class="nav-item px-lg-3">
+                        <button class=" btn btn-acc btn-outline-light member" id="accbtn" type="button">Account</button>
+                    </li>
+                </form>
+            </ul>
+        </div>
+
+    </nav>
+
+
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1 class="site-heading text-center text-white d-lg-block">
+                        <span class="site-heading-upper text-primary mb-3 first-words">A payment system for PYsales
+                            robot</span>
+                        <br>
+                        <span class="site-heading-lower text-head mb-5">PYPAY</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-success py-lg-4 second-words" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Functions</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment">Introduction
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYPAY">PYPAY system</a>
+                    </li>
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYsales">PYsales robot</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/demo">Demo video</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/download">Downloads</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"
+        integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(() => {
+            const loginbtn = $("#loginbtn");
+            const signupbtn = $("#signupbtn");
+            const logoutbtn = $("#logoutbtn");
+            const accbtn = $("#accbtn");
+
+            const memberButtonSet = $(".member");
+            const anonymousButtonSet = $(".anonymous");
+            const loginName = $("#loginName");
+
+
+
+            const showMemberSet = () => {
+                anonymousButtonSet.hide();
+                memberButtonSet.show();
+            };
+
+            const showAnonymousSet = () => {
+                memberButtonSet.hide();
+                anonymousButtonSet.show();
+            };
+            userID = Cookies.get("x-member-id");
+            if (userID) {
+                fetch(`https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/user/${userID}`).then(res => res.json()).then(data => {
+                    first_name = data["fname"];
+                    loginName.text(`Welcome,${first_name}`);
+                }).catch(err => console.log(err));
+            }
+
+            signupbtn.on("click", event => {
+                event.preventDefault();
+                window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/signup";
+            });
+
+            loginbtn.on("click", event => {
+                event.preventDefault();
+                window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/login";
+            });
+
+
+            logoutbtn.on("click", event => {
+                event.preventDefault();
+                window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/logout";
+            });
+            accbtn.on("click", event => {
+                event.preventDefault();
+                window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/account";
+            });
+        });
+    </script>
+
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="introsales">
+                <br>
+                <img class="intro-img im1 img-fluid mb-3 mb-lg-0 rounded"
+                    src="https://firebasestorage.googleapis.com/v0/b/pypay-cloudserver.appspot.com/o/PYsales.PNG?alt=media&token=60fe9bdc-9e29-4fb4-b727-880daab15803"
+                    alt="">
+                <img class="intro-img im1 img-fluid mb-3 mb-lg-0 rounded"
+                    src="https://firebasestorage.googleapis.com/v0/b/pypay-cloudserver.appspot.com/o/pysales_robot_wink.PNG?alt=media&token=a50b0c3b-0342-4dc8-b227-9e65933cce36"
+                    alt="">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper"></span>
+                            <span class="section-heading-lower"></span>
+                        </h2>
+                        <p class="site-heading-lower text-success mb-5">Now preparing...</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; PYPAY/PYsales 2019</p>
+        </div>
+    </footer>
+</body>
+
+</html>

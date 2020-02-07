@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/pypay-cloudserver.appspot.com/o/favicon.ico?alt=media&token=9b187be4-a6c1-4445-b308-4595c401dc30">
+
+    <title>PYPAY- a payment system for PYsales robot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+    <!-- Custom fonts for this template -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/style.css"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1 class="site-heading text-center text-white d-lg-block">
+                        <span class="site-heading-upper text-primary mb-3 first-words">A payment system for PYsales
+                            robot</span>
+                        <br>
+                        <span class="site-heading-lower text-head mb-5">PYPAY</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-success py-lg-4 second-words" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Functions</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment">Introduction
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYPAY">PYPAY system</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/PYsales">PYsales robot</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/demo">Demo video</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded"
+                            href="https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/download">Downloads</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="page-section clearfix">
+
+        <div class="w40leftblank cta-inner"></div>
+        <div class="form-style w20div">
+            <h1 class="form-text">
+                <span class="font"><strong><em>Signup</em></strong></span>
+            </h1>
+            <div class="w100div">
+                <botton class="commonbtn" style="float: right;"
+                    onclick="location.href='https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/login'">Login
+                </botton>
+            </div>
+
+            <fieldset>
+
+                <label for="field1">
+                    <span>Recovery Email(e.g. Gmail)
+                        <span class="required">*</span>
+                    </span>
+                    <input type="text" id="email" class="input-field" />
+                </label>
+                <label for="field1">
+                    <span>First name
+                        <span class="required">*</span>
+                    </span>
+                    <input type="text" id="inputFname" class="input-field" />
+                </label>
+                <label for="field1">
+                    <span>Last name
+                        <span class="required">*</span>
+                    </span>
+                    <input type="text" id="inputLname" class="input-field" />
+                </label>
+
+                <label for="field1">
+                    <span>Username
+                        <span class="required">*</span>
+                    </span>
+                    <input type="text" id="inputUsername" class="input-field" />
+                </label>
+                <label for="field1">
+                    <span>Password
+                        <span class="required">*</span>
+                    </span>
+                    <input type="password" id="inputPassword" class="input-field" />
+                </label>
+                <label for="field1">
+                    <span>Confirm Password
+                        <span class="required">*</span>
+                    </span>
+                    <input type="password" id="inputConfirmation" class="input-field" />
+                </label>
+                <label>
+                    <!--<input type="submit" onclick="location.href='userdata.html'" value="submit" />-->
+                    <button type="submit" id="send" class="btn btn-primary">Submit</button>
+                </label>
+                <div id="errormsg" style="color:red"></div>
+            </fieldset>
+
+        </div>
+    </section>
+
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; PYPAY/PYsales 2019</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"
+        integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        const lname_field = document.querySelector("#inputLname");
+        const fname_field = document.querySelector("#inputFname");
+        const email_field = document.querySelector("#email");
+        const sendButton = document.querySelector("#send");
+
+        const username = document.querySelector("#inputUsername");
+        const password = document.querySelector("#inputPassword");
+        const confirmation = document.querySelector("#inputConfirmation");
+
+        const disable_all = () => {
+            lname_field.disabled = true;
+            lname_field.readOnly = true;
+            fname_field.disabled = true;
+            fname_field.readOnly = true;
+            email_field.disabled = true;
+            email_field.readOnly = true;
+            username.disabled = true
+            username.readOnly = true
+            password.disabled = true
+            password.readOnly = true
+            confirmation.disabled = true
+            confirmation.readOnly = true
+            sendButton.disabled = true;
+            sendButton.style.cursor = "not-allowed";
+        }
+
+        const enable_all = () => {
+            lname_field.disabled = false;
+            lname_field.readOnly = false;
+            fname_field.disabled = false;
+            fname_field.readOnly = false;
+            email_field.disabled = false;
+            email_field.readOnly = false;
+            username.disabled = false
+            username.readOnly = false
+            password.disabled = false
+            password.readOnly = false
+            confirmation.disabled = false
+            confirmation.readOnly = false
+            sendButton.disabled = false;
+            sendButton.style.cursor = "pointer";
+        }
+
+        const clearall = () => {
+            lname_field.value = "";
+            fname_field.value = "";
+            email_field.value = "";
+            username.value = "";
+            password.value = "";
+            confirmation.value = "";
+        }
+
+        sendButton.addEventListener("click", event => {
+            event.preventDefault();
+            let lname = lname_field.value;
+            let fname = fname_field.value;
+            let email = email_field.value;
+            let user = username.value;
+            let pass = password.value;
+            let confirm = confirmation.value;
+
+            if (!(lname && fname && email && user && pass && confirm)) {
+                alert("Please fill in all blanks!");
+                return;
+            }
+            if (email) {
+                var emailRegxp = /^([\w]+)(.[\w]+)*@([\w]+)(.[\w]{2,3}){1,2}$/;
+                if (emailRegxp.test(email) != true) {
+                    alert("Please fill in the correct email!");
+                    return;
+                }
+            }
+            if (pass !== confirm) {
+                alert("Password and Confirmation must be same!");
+                return;
+            }
+            balance = 100;
+            let payload = { lname, fname, email, user, pass, balance };
+            disable_all();
+            fetch('/payment/new', {
+                method: "POST",
+                header: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(res => {
+                if (res.status == 201) {
+                    clearall();
+                }
+                return res.json();
+            }).then(data => {
+                enable_all();
+                if (data.error) {
+                    window.alert(`error:${data.error}`);
+                }
+                else {
+                    window.location.href = "https://us-central1-pypay-cloudserver.cloudfunctions.net/payment/"
+                }
+            }).catch(err => {
+                alert(`Send error: ${err}`);
+                enable_all();
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
