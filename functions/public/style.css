@@ -20,6 +20,18 @@
     
     p{line-height:1.75}
     .text-faded{color:rgba(255,255,255,.3)}
+
+    .site-headinglow{margin-top:5rem;
+        margin-bottom:5rem;
+        line-height:1;
+        font-family:Raleway}
+
+    .site-headinglow .site-heading-download{
+        display:block;
+        font-size:16rem;
+        font-weight:800
+    }
+
     .site-heading{margin-top:5rem;
         margin-bottom:5rem;
         text-transform:uppercase;
@@ -128,6 +140,17 @@
     @media (min-width:1200px)
     {.intro .intro-text{width:45%}}
 
+    .introdown{
+        position:relative
+    }
+   
+    @media (min-width:992px){
+        .introdown .intro-text{left:0;width:60%;margin-top:0rem;position:absolute}
+        .introdown .intro-text .intro-button{width:100%;left:0;position:absolute;bottom:-2rem}}
+    
+    @media (min-width:1200px)
+    {.introdown .intro-text{width:45%}}
+
 
 
     .intropay{
@@ -177,6 +200,30 @@
         left:-.5rem;
         right:-.5rem;
         border:.25rem solid rgba(255,255,255,.85)}
+
+    .rta{
+        padding-top:5rem;
+        padding-bottom:5rem;
+        background-color:rgba(230,167,86,.9)
+    }
+
+    .rta .block{
+        position:relative;
+        padding:3rem;
+        margin:.5rem;
+        background-color:rgba(255,255,255,.85)
+    }
+    .rta .block:before{
+        border-radius:.5rem;
+        position:absolute;
+        top:-.5rem;
+        bottom:-.5rem;
+        left:-.5rem;
+        right:-.5rem;
+        border:.25rem solid rgba(255,255,255,.85)}
+
+        
+
         
     @media (min-width:992px){
         .about-heading .about-heading-img{
