@@ -125,6 +125,27 @@
         padding-left:2rem;
         padding-right:2rem
     }
+    .introshow{
+        position:relative
+    }
+   
+    @media (min-width:992px){
+        .introshow .introshow-img{width:35%}}
+
+    .intrologo{
+        position:relative
+    }
+    
+    @media (min-width:992px){
+        .intrologo .intrologo-img{width:10%}}
+
+
+    .introfun{
+        position:relative
+    }
+    
+    @media (min-width:992px){
+        .introfun .introfun-img{width:30%}}
         
         
         
