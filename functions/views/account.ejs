@@ -128,18 +128,20 @@
     </nav>
 
     <section class="page-section clearfix">
+        <div class="container">
 
-        <div class="w40cenblank cta-inner"></div>
+            <div class="introdown">
+
+                <div class="introdown-text left-0  bg-faded p-5 ">
 
 
-        <div class="w100div">
-            <div role="main" id="main" class="main">
                 <h2 class="form-textdata">
                     <span class="font"><strong><%= fname %>'s personal data</strong></span>
 
                 </h2>
                 <br />
                 <br />
+                <div style="overflow:auto">
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
@@ -180,21 +182,21 @@
                     </tbody>
                 </table>
             </div>
+            <br>
+            <br>
+
+                <div style="text-align:center">
+                    <button type="button" id="deleteac" class="btn btn-primary">Delete account</button>
+                </div>
+            </div>
 
         </div>
+        </div>
+    
     </section>
 
 
-    <section class="page-section clearfix">
-
-        <div style="text-align:center">
-            <button type="button" id="deleteac" class="btn btn-primary">Delete account</button>
-        </div>
-
-
-
-
-    </section>
+    
 
 
     <div class="Modal-backdrop1"></div>
@@ -340,14 +342,23 @@
             const deleteac = $("#deleteac");
 
 
+            var $ofweidht=innerWidth;
+
+
 
 
 
 
             mpass.on("click", event => {
+                if($ofweidht<=992)
+                {
+                    alert("Please use Web Browser from computer to modify personal data !");
+                }
+                else{
                 event.preventDefault();
                 modpass.show();
                 backdrop1.show();
+                }
             });
 
             modalCancelButton1.on("click", event => {
@@ -401,9 +412,14 @@
 
 
             memail.on("click", event => {
+                if($ofweidht<=992)
+                {
+                    alert("Please use Web Browser from computer to modify personal data !");
+                }else
+                {
                 event.preventDefault();
                 modemail.show();
-                backdrop2.show();
+                backdrop2.show();}
             });
 
             modalCancelButton2.on("click", event => {
@@ -465,9 +481,13 @@
 
 
             mFname.on("click", event => {
+                if($ofweidht<=992)
+                {
+                    alert("Please use Web Browser from computer to modify personal data !");
+                }else{
                 event.preventDefault();
                 modFn.show();
-                backdrop3.show();
+                backdrop3.show();}
             });
 
             modalCancelButton3.on("click", event => {
@@ -519,9 +539,13 @@
 
 
             mLname.on("click", event => {
+                if($ofweidht<=992)
+                {
+                    alert("Please use Web Browser from computer to modify personal data !");
+                }else{
                 event.preventDefault();
                 modLn.show();
-                backdrop4.show();
+                backdrop4.show();}
             });
 
             modalCancelButton4.on("click", event => {
